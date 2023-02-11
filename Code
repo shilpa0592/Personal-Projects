@@ -1,0 +1,154 @@
+/* First, let’s check how many records are in this table.*/
+
+SELECT count(show_id) 
+FROM title;
+
+/* We know it is 8807. */
+
+/* Next, let’s take a look at what types of titles we have. */
+
+SELECT distinct(type) 
+FROM title;
+
+/* We see there are 2 types - Movie and TV Show. */
+
+/* Now, I’d like to know how many movies are here vs how many TV Shows. */
+
+SELECT count(Type)
+FROM title
+WHERE type ='Movie' ;
+ 
+/* So there are 6131 movies. */
+
+SELECT count(Type)
+FROM title
+WHERE type =’TV Show’;
+
+/* So there are 2676 tv shows. */
+
+
+/* Next it would be interesting to know the country of origins of all these titles by looking at a couple of major players. */
+
+/* How many titles have been submitted by USA vs India vs Canada and so on? */
+
+SELECT count(country), country 
+FROM title
+WHERE country like '%United States%';
+
+SELECT count(country), country 
+FROM title
+WHERE country like '%India%';
+
+SELECT count(country), country 
+FROM title
+WHERE country like '%Canada';
+
+SELECT count(country), country 
+FROM title
+WHERE country like '%United Kingdom%';
+
+SELECT count(country), country 
+FROM title
+WHERE country like '%Mexico%';
+
+SELECT count(country), country 
+FROM title
+WHERE country like '%Russia%';
+
+
+/* Next, let's look at how many titles were added for a particular year, starting with 2008, and using the same code for every following year till 2021. */
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2008%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2009%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2010%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2011%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2012%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2013%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2014%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2015%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2016%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2017%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2018%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2019%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2020%'
+;
+
+SELECT count(date_added), date_added
+FROM title 
+WHERE date_added like '%2021%'
+;
+
+
+/* Once we take a look at these numbers, we can tell that the most titles were added in 2019.
+   Let's see the split of movies vs tv shows in 2019. */
+
+SELECT count(type) 
+FROM title
+WHERE date_added like '%2019' AND type ='Movie' ;
+
+SELECT count(type) 
+FROM title
+WHERE date_added like '%2019' AND type ='TV SHOW' ;
+
+/* Next, let's try to see what's the oldest movie we have in this dataset. Old = oldest release date. And then let's find the newest one as well */
+
+SELECT release_year 
+FROM title
+ORDER BY release_year ;
+
+SELECT release_year 
+FROM title
+ORDER BY release_year DESC ;
+
+
+/*And there we go! Basic exploratory sql analysis. */
