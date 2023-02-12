@@ -9,7 +9,11 @@
 Downloaded a dataset from Kaggle on Netflix data and used mySQL to run some queries and conduct data analysis. 
 Understood how many movies and TV shows were added, when and so on. 
 
-(b) [Data Viz - Tableau ](https://github.com/shilpa0592/Personal-Projects/blob/92f62e93754c4b6429dd33540be5198572890977/Tableaupublic)
+(b) <a href="https://public.tableau.com/views/NetflixContentDashboard_16761585889500/NetflixDataDashboardi?:language=en-US&:display_count=n&:origin=viz_share_link"> Data Viz - Tableau Dashboard </a>
+
+Created a dashboard using the same dataset on Tableau public.
+
+
 
  
 
